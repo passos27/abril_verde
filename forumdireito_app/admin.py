@@ -16,5 +16,11 @@ class Palestranteadmin(admin.ModelAdmin):
     list_display = ['nome', ]
     search_fields = ['palestrante__nome', ]
 
+
+class Perguntaadmin(admin.ModelAdmin):
+    list_display = ['nome', ]
+    search_fields = ['nome', ]
+
 admin.site.register(Palestras, Palestrassadmin)
 admin.site.register(Palestrante, Palestranteadmin)
+admin.site.register(Pergunta, Perguntaadmin)
