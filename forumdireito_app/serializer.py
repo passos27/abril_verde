@@ -17,3 +17,11 @@ class PerguntaSerializer(serializers.ModelSerializer):
         fields = ['id', 'nome','cpf','email','pergunta','dt_pergunta','dt_atualizacao','status']
     def get_status(self,obj):
         return obj.get_status_display()
+
+
+
+class PalesranteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Palestrante
+        depth = 1
+        fields = ['id', 'nome','foto','curriculo']

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Painel do mediador</title>
+    <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+
+<nav class="indigo darken-3">
+    <div class="nav-wrapper">
+{#        <a href="#" class="brand-logo">Logo</a>#}
+        <img src="{% static 'img/logoFaao2.png' %}" class="logo-insti">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Sair do sistema</a></li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1 class="grey-text text-lighten-1">PERGUNTAS DA <strong>PLATÉIA</strong></h1>
+    <div class="row">
+
+        {% for i in pergunta %}
+            <div class="col s12 m4">
+                <div class="card  grey lighten-3 card-pergunta">
+                    <div class="card-content">
+                        <div class="card-title indigo-text text-darken-3"><strong>{{ i.nome }}</strong></div>
+                        <div class="cpf">{{ i.cpf }}</div>
+
+                        <p>{{ i.pergunta }}</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="row" style="padding: 0;margin: 0">
+                            <div class="col s4">
+                                <a href="#" class="btn-flat">Cancelar</a>
+                            </div>
+                            <div class="col s8">
+                                <a href="#" class="btn teal accent-4 btn-block">Respondida</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+<script src="{% static 'js/materialize.min.js.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.logo-insti{
+    padding-top: 0.5%;
+    height: 90%;
+}
+a{
+    color:#757575 !important;
+}
+.card-title{
+    text-transform: uppercase;
+    margin-bottom: 0 !important;
+}
+.cpf{
+    padding-bottom: 20px !important;
+    color: #757575;
+}
+.card-pergunta{
+    min-height: 300px;
+}

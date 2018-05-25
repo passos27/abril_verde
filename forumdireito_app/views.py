@@ -5,7 +5,9 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.status import HTTP_201_CREATED
 # from rest_framework_api_key.permissions import HasAPIAccess
-
+from django.template.response import TemplateResponse
+from django.urls import reverse
+from django.urls.base import reverse_lazy
 from forumdireito_app.models import *
 
 # dados
@@ -50,3 +52,20 @@ class PerguntaList(APIView):
             return Response(serializer.data, status=HTTP_201_CREATED)
         else:
             return Response({"message:": "403 Forbiden"}, status=status.HTTP_409_CONFLICT)
+
+
+class PalesranteList(APIView):
+    # permission_classes = (IsAuthenticated,)
+    # permission_classes = (HasAPIAccess, )
+
+    serializer_class = PalesranteSerializer
+
+    def get(self, request, format=None):
+        serializer = self.serializer_class(Palestrante.objects.all(), many=True)
+        return Response(serializer.data)
+
+
+def PainelMediador(request):
+    pergunta = Pergunta.objects.all()
+
+    return render(request, 'painel.html', locals())

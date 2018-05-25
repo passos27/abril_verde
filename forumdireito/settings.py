@@ -25,7 +25,7 @@ SECRET_KEY = 'a5e-9d#2beoe1c9)(dn0-p-7@rjif#%t89^jw0vfuv1q$s*%gu'
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = {'172.18.117.94'}
+ALLOWED_HOSTS = {'172.16.109.162'}
 
 # Application definition
 
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'forumdireito.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'template')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
