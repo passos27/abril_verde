@@ -6,13 +6,15 @@
     <title>Painel do mediador</title>
     <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 
-<nav class="indigo darken-3">
+<nav class="green">
     <div class="nav-wrapper">
-{#        <a href="#" class="brand-logo">Logo</a>#}
-        <img src="{% static 'img/logoFaao2.png' %}" class="logo-insti">
+        {#        <a href="#" class="brand-logo">Logo</a>#}
+        <img src="{% static 'img/logoFaao.png' %}" class="logo-insti">
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#">Sair do sistema</a></li>
 
@@ -26,21 +28,19 @@
     <div class="row">
 
         {% for i in pergunta %}
-            <div class="col s12 m4">
-                <div class="card  grey lighten-3 card-pergunta">
+            <div class="col s12 m3">
+                <div class="card  green lighten-5 card-pergunta">
                     <div class="card-content">
-                        <div class="card-title"><strong>{{ i.nome }}</strong></div>
-                        <div class="cpf">{{ i.cpf }}</div>
+                        <div class="card-title green-text"><strong>{{ i.nome }}</strong></div>
+                        <div class="cpf green-text">{{ i.cpf }}</div>
 
                         <p>{{ i.pergunta }}</p>
                     </div>
                     <div class="card-action">
                         <div class="row" style="padding: 0;margin: 0">
-                            <div class="col s4">
-                                <a href="#" class="btn-flat">Cancelar</a>
-                            </div>
-                            <div class="col s8">
-                                <a href="#" class="btn teal accent-4 btn-block">Respondida</a>
+
+                            <div class="col s12">
+                                <a href="#" class="btn btn-block green grey-text text-lighten-5"><i class="material-icons left">check</i>Respondida</a>
                             </div>
                         </div>
                     </div>
